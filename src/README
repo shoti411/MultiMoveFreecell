@@ -1,0 +1,90 @@
+README
+
+Note: When I went to Office Hours, I was told that making a ReadMe file to document my changes
+would be okay instead of scattering notes all around my code because then it would be very hard
+to find my specific changes.
+
+
+Updates to the Code and Documentation of all changes made from Assignment 3 to Assignment 4
+
+
+1. I changed all of the string concatenation functions to be using string builders instead to be
+more efficient. This change includes all of the IllegalArgumentException messages just so my code
+would be more efficient.
+
+2. I changed several of my helper methods in SimpleFreecell model from private to protected so
+that I could use them in my MultiMoveFreecellModel class. These methods include:
+ - getFreecellPile
+ - getLastCardIndex
+ - getCardAt
+  I did this so that I could use them for the modified move function which would allow the movement
+  of multiple cards from Cascade Piles to other Cascade Piles. It helped with lessening the code
+  and not repeating the code that I had to write.
+
+3. I also changed the GameState field in my SimpleFreecell model game to protected to
+be able to access it and check it in the MultiMoveFreecellModel class which extends
+SimpleFreecellModel. I needed to do this because I needed to be able to change
+the state of the game to also be consistent with the move method in the SimpleFreecellModel class.
+The MultiMoveFreecellModel class needed the move method to be able to switch the state of the game
+to FINISHED to be able to end the game and display the "Game Over." message.
+
+4. I created a class called AbstractFreecellModel for which I abstracted the tests from the
+SimpleFreecellModelTest class to be able to test the same exact ones against
+the MultiMoveFreecellModelTest class since the MultiMoveFreecellModel class should provide
+the same functionality as the SimpleFreecellModel class, with few changes and add-ins (the ability
+to move multiple cards at once as well as just a single card at once). I asked help from a TA
+in Office Hours with it, and he said my implementation of the AbstractFreecellModelTest class
+was fine. Inside the MultiMoveFreecellModelTest class, I created specific tests which should mainly
+only apply to work with the MultiMoveFreecellModel and not the SimpleFreecellModel class.
+
+5. I found a bug in the SimpleFreecellModel class' implementation of the move function which
+did not allow it to move a card from an open pile to a cascade pile when it should have. It turns
+out that I was using the source pile's input index rather than the destination pile's input index
+for a comparison which caused it to only fail in certain scenarios. I have now fixed it and tested
+it.
+
+6. In the self-evaluation for Assignment 3, I learned that I was supposed to not add a new line
+at the end of my renderBoard method and instead leave it to the controller (from a TA in OH), so
+I instead changed my implementation of the render functions in the FreecellTextView class as well
+as changing my implementation of the playGame method in the SimpleFreecellController class.
+Because I also needed to create some more helper functions to take out the number of try-catches
+which were present in my playGame function, I created the helper function renderBoardStateException
+which only used the try-catch to render the board, another line (using the renderMessage method
+in the FreecellTextView class), and throw an IllegalStateException instead of an IOException when
+reading from the Readable failed or writing the Appendable failed. I also abstracted the functions
+to check if the pile inputs were valid in the SimpleFreecellController class by creating the
+function isWholePileInputValid which takes another try catch statement which is repeated out.
+I also took out the extra local variables which were in the function not being used (this includes
+sourcePileType, sourcePileIndex, destPileType, destPileIndex, and sourceCardIndex.
+
+7. I added the test from the self-evaluation which I forgot that was supposed to verify
+that playGame works correctly by starting a new game and completing it successfully,
+including invalid inputs. I put the test in the SimpleFreecellControllerTest class.
+
+8. I recently heard from a TA in office hours that I should not have a public constructor
+for both SimpleFreecellModel and MultiMoveFreecellModel that is different than the one specified
+in the first freecell assignment. Unfortunately, I did not hear that news until a bit later, so
+still had a 2nd public constructor which allowed me to specify the specific fields of both my
+SimpleFreecellModel and MultiMoveFreecellModel class. I know that I should have taken it out,
+but unfortunately, a lot of my tests are reliant on those constructors, so I was also reluctant to
+completely erase the constructor, and the Instructor endorsed answer was to just make sure that
+my second constructor enforced all of the constraints of the problem, such as there being at least
+4 cascade piles and at least 1 Open Pile. I have made the corresponding changes to my special
+constructor, and I will cease to create additional public constructors just for the sake of testing.
+
+
+
+To Play the Game, You must Run SimpleFreecell.
+
+To input commands, you should put it in this form:
+__InitialPile__ __CardIndex__ __FinalPile__
+
+
+
+
+
+To quit the game press Q or q.
+
+
+
+
