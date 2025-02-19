@@ -1,0 +1,69 @@
+
+With MultimodalFreecell, you may specify the number of Cascade Stacks and Open Stacks to use in the game. The game will then be played with the specified number of Cascade Stacks and Open Stacks. The game will be played with the same rules as the SimpleFreecell game, but with the added functionality of being able to move multiple cards at once from one Cascade Stack to another Cascade Stack. The game will end when all of the cards are moved to the Foundation Stacks or when the user quits the game. The game will also end if the user tries to make an invalid move. The game will then display the "Game Over." message.
+
+
+To Play the Game, You must Run SimpleFreecell.java.
+
+To input commands, you should put it in this form:
+__InitialPile__ __CardIndex__ __FinalPile__
+
+
+To quit the game press Q or q.
+
+
+
+
+Example Game State:
+
+F1: A♠
+F2: A♣, 2♣
+F3: A♥, 2♥
+F4:
+O1:
+O2:
+O3:
+O4: 8♦
+C1: K♠, 3♦, K♥, 8♠, 5♥, 5♦, 5♠
+C2: 4♣, 5♣, 4♠, 9♦, K♣
+C3: 2♠, 9♠, 8♣, 10♦, 8♥, Q♠, J♦
+C4: 10♥, J♠, Q♦, 6♣, 3♣, J♣
+C5: 6♦, 3♥, 10♠, Q♥, 6♠
+C6: 9♣, 7♣, 7♥, K♦, 4♥, 3♠, 2♦
+C7: Q♣, J♥, 10♣, 9♥
+C8: 7♦, 7♠, 6♥, A♦, 4♦
+
+|
+V
+
+Example Command:
+C2 1 O3
+
+|
+V
+
+F1: A♠
+F2: A♣, 2♣
+F3: A♥, 2♥
+F4:
+O1:
+O2:
+O3: K♣
+O4: 8♦
+C1: K♠, 3♦, K♥, 8♠, 5♥, 5♦, 5♠
+C2: 4♣, 5♣, 4♠, 9♦
+C3: 2♠, 9♠, 8♣, 10♦, 8♥, Q♠, J♦
+C4: 10♥, J♠, Q♦, 6♣, 3♣, J♣
+C5: 6♦, 3♥, 10♠, Q♥, 6♠
+C6: 9♣, 7♣, 7♥, K♦, 4♥, 3♠, 2♦
+C7: Q♣, J♥, 10♣, 9♥
+C8: 7♦, 7♠, 6♥, A♦, 4♦
+
+|
+V
+
+Q
+
+|
+V
+
+The game quit prematurely.
