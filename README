@@ -1,9 +1,10 @@
 
 With MultimodalFreecell, you may specify the number of Cascade Stacks and Open Stacks to use in the game. The game will then be played with the specified number of Cascade Stacks and Open Stacks. The game will be played with the same rules as the SimpleFreecell game, but with the added functionality of being able to move multiple cards at once from one Cascade Stack to another Cascade Stack, but only if the move would be valid. The game will end when all of the cards are moved to the Foundation Stacks or when the user quits the game. The game will also end if the user tries to make an invalid move. The game will switch to the FINISHED state.
 
+The tests need JUnit to be installed and can be looked at for more examples of how the game should be run.
+
 To play the game, you must be able to display these specific ASCII characters:
 ♠, ♣, ♥, ♦
-
 
 To Play the Game, You must Run SimpleFreecell.java.
 
