@@ -74,3 +74,17 @@ constructor, and I will cease to create additional public constructors just for 
 
 
 
+To Play the Game, You must Run SimpleFreecell.java.
+
+To input commands, you should put it in this form:
+__InitialPile__ __CardIndex__ __FinalPile__
+
+
+
+
+
+To quit the game press Q or q.
+
+
+
+
